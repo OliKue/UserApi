@@ -25,6 +25,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping(value = "/user/byFirstName/{firstName}")
+    public List<User> getUsersWithFirstName(@PathVariable("firstName") String firstName) {
+        return userService.getAllUserByFirstName(firstName);
+    }
+
     @PutMapping(value = "/user/{id}")
     public User updateUser(@PathVariable("id")  long id, @RequestBody User user){
         return userService.saveOrUpdate(user, id);

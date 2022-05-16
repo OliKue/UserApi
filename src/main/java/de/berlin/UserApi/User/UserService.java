@@ -38,4 +38,10 @@ public class UserService {
     public void deleteUser(long id) {
         userRepository.deleteById(id);
     }
+
+    public List<User> getAllUserByFirstName(String firstName){
+        List<User> users = new ArrayList<>();
+        userRepository.findAllByFirstName(firstName).forEach(user -> users.add(user));
+        return users;
+    }
 }
