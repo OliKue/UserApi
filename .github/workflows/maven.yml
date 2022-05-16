@@ -23,4 +23,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml && mkdir staging && cd target/*.jar staging
+      run: mvn -B package --file pom.xml && mkdir staging && cp target/*.jar staging
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        path: staging
+       
