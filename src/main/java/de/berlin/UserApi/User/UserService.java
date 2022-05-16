@@ -32,6 +32,7 @@ public class UserService {
     }
 
     public User saveOrUpdate(User user, Long id) {
+        user.setId(id);
         return userRepository.save(user);
     }
 
