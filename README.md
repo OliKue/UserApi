@@ -2,7 +2,9 @@
 Recruiting Task Backend - Java
 
 ## How to start
-1. Build the project with maven:
+0. Clone the project
+
+2. Build the project with maven:
 `mvn package` 
 
 2. Build docker image:
@@ -10,8 +12,6 @@ Recruiting Task Backend - Java
 
 3. Run docker image:
 `docker run -p 9000:9000 org/userapi`
-
-    Note: Flag `-p` is used to publish the port. 
 
 ## Endpoints
 This api implements CRUD options for `/user`.
